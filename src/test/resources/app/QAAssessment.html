@@ -1,0 +1,159 @@
+
+<!-- saved from url=(0102)file:///C:/Users/lucas/AppData/Local/Temp/%7BF8ED87E4-5F36-4247-A0A8-63D8024E1E9D%7D/QaAssessment.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" encoding="ISO-8859-1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>QA Assessment</title>
+
+<script language="JavaScript">
+
+function clicado() { 
+	document.getElementById('buttonSimple').value = "Obrigado!"
+}
+
+function voltou() { 
+	document.getElementById('resultado').innerHTML = "Voltou!"; 
+}
+
+function fazerCadastro() {
+	if(document.getElementById('elementosForm:nome').value == '') {
+		alert("Nome é obrigatorio");
+		return;
+	}
+	if(document.getElementById('elementosForm:sobrenome').value == '') {
+		alert("Sobrenome é obrigatorio");
+		return;
+	}
+	if(!document.getElementById('elementosForm:sexo:0').checked &&
+			!document.getElementById('elementosForm:sexo:1').checked) {
+		alert("Sexo é obrigatorio");
+		return;
+	}
+	if(document.getElementById('elementosForm:comidaFavorita:3').checked &&
+			(document.getElementById('elementosForm:comidaFavorita:0').checked || 
+				document.getElementById('elementosForm:comidaFavorita:1').checked)) {
+		alert("Tem certeza que voce é vegetariano?");
+		return;
+	}
+	var esportes = '';
+	var options = document.getElementById('elementosForm:esportes').options;
+	for(var i = 0; i < options.length; i++) {
+		if(options[i].selected){
+			esportes += ' ' + options[i].text + ' '; 
+		}
+		if(esportes.indexOf('O que eh esporte?') != -1 && esportes.length != 19) {
+			alert("Você faz esporte ou nao?");
+			return;
+		}
+	}
+	document.getElementById('resultado').innerHTML = 
+		"<span>Cadastrado com sucesso!</span><br/>"
+			+ "<div id='descNome'>Nome: <span>" + document.getElementById('elementosForm:nome').value + "</span></div>"
+			+ "<div id='descSobrenome'>Sobrenome: <span>" + document.getElementById('elementosForm:sobrenome').value + "</span></div>"
+			+ "<div id='descSexo'>Sexo: <span>" + (document.getElementById('elementosForm:sexo:0').checked? 'Masculino': (document.getElementById('elementosForm:sexo:1').checked? 'Feminino': 'Desconhecido')) + "</span></div>"
+			+ "<div id=\'descComida\'>Comida: <span>" + (document.getElementById('elementosForm:comidaFavorita:0').checked? ' Carne ': '') 
+					+ (document.getElementById('elementosForm:comidaFavorita:1').checked? ' Frango ': '') 
+					+ (document.getElementById('elementosForm:comidaFavorita:2').checked? ' Pizza ': '') 
+					+ (document.getElementById('elementosForm:comidaFavorita:3').checked? ' Vegetariano ': '') + "</span></div>"
+			+ "<div id='descEscolaridade'>Escolaridade: <span>" + document.getElementById('elementosForm:escolaridade').value + "</span></div>"
+			+ "<div id='descEsportes'>Esportes: <span>" + esportes + "</span></div>"
+			+ "<div id='descSugestoes'>Sugestoes: <span>" + document.getElementById('elementosForm:sugestoes').value + "</span></div>";
+			alert('OK');
+}
+
+</script>
+</head>
+<body>
+	<center>
+		<div id="mensagem"></div>
+		<form id="elementosForm" name="elementosForm" method="post" enctype="application/x-www-form-urlencoded">
+			<input type="hidden" name="elementosForm" value="elementosForm">
+
+			<h3>QA Automation Assessment</h3>
+			<input type="button" id="buttonSimple" value="Clique aqui!" onclick="javascript:clicado()">
+			
+			<table bgcolor="A1E8CC">
+				<tbody>
+					<tr>
+						<td><label for="elementosForm:nome">Nome:</label></td>
+						<td><input id="elementosForm:nome" type="text" name="elementosForm:nome" maxlength="30" size="30"></td>
+					</tr>
+					<tr>
+						<td><label for="elementosForm:sobrenome">Sobrenome:</label></td>
+						<td><input id="elementosForm:sobrenome" type="text" name="elementosForm:sobrenome" maxlength="30" size="30"></td>
+					</tr>
+					<tr>
+						<td><label for="elementosForm:sexo">Sexo:</label></td>
+						<td><table id="elementosForm:sexo">
+								<tbody><tr>
+									<td><input type="radio" name="elementosForm:sexo" id="elementosForm:sexo:0" value="M"><label for="elementosForm:sexo:0"> Masculino</label></td>
+									<td><input type="radio" name="elementosForm:sexo" id="elementosForm:sexo:1" value="F"><label for="elementosForm:sexo:1"> Feminino</label></td>
+								</tr>
+							</tbody></table></td>
+					</tr>
+					<tr>
+						<td><label for="elementosForm:comidaFavorita">Qual
+								sua comida favorita?</label></td>
+						<td><table id="elementosForm:comidaFavorita">
+								<tbody><tr>
+									<td><input name="elementosForm:comidaFavorita" id="elementosForm:comidaFavorita:0" value="carne" type="checkbox"><label for="elementosForm:comidaFavorita:0" class=""> Carne</label></td>
+									<td><input name="elementosForm:comidaFavorita" id="elementosForm:comidaFavorita:1" value="frango" type="checkbox"><label for="elementosForm:comidaFavorita:1" class=""> Frango</label></td>
+									<td><input name="elementosForm:comidaFavorita" id="elementosForm:comidaFavorita:2" value="pizza" type="checkbox"><label for="elementosForm:comidaFavorita:2" class=""> Pizza</label></td>
+									<td><input name="elementosForm:comidaFavorita" id="elementosForm:comidaFavorita:3" value="vegetariano" type="checkbox"><label for="elementosForm:comidaFavorita:3" class=""> Vegetariano</label></td>
+								</tr>
+							</tbody></table></td>
+					</tr>
+					<tr>
+						<td><label for="elementosForm:escolaridade">Escolaridade:</label></td>
+						<td><select id="elementosForm:escolaridade" name="elementosForm:escolaridade" size="1">
+								<option value="1grauincomp">1o grau incompleto</option>
+								<option value="1graucomp">1o grau completo</option>
+								<option value="2grauincomp">2o grau incompleto</option>
+								<option value="2graucomp">2o grau completo</option>
+								<option value="superior">Superior</option>
+								<option value="especializacao">Especializacao</option>
+								<option value="mestrado">Mestrado</option>
+								<option value="doutorado">Doutorado</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td><label for="elementosForm:esportes">Pratica
+								esportes?</label></td>
+						<td>
+							<select multiple="" id="elementosForm:esportes">
+								<option value="natacao">Natacao</option>
+								<option value="futebol">Futebol</option>
+								<option value="Corrida">Corrida</option>
+								<option value="Karate">Karate</option>
+								<option value="nada">O que é esporte?</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="elementosForm:sugestoes">Comentários:</label></td>
+						<td><textarea id="elementosForm:sugestoes" name="elementosForm:sugestoes" cols="50" rows="10"></textarea></td>
+					</tr>
+					
+					<tr>
+						<td><input id="elementosForm:cadastrar" type="button" name="elementosForm:cadastrar" value="Cadastrar" onclick="javascript:fazerCadastro()"></td>
+					</tr>
+				</tbody>
+			</table>
+			<!--span class="facilAchar">Cuidado onde clica, muitas armadilhas...</span-->
+			<input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="-8482990028596267160:-5465474793192341771" autocomplete="off">
+		</form>
+		<br>
+		<br>
+		<div id="resultado-label">
+			<label for="msgresultado" id="msgresultado"></label>
+		</div>
+		<div id="resultado">Status: Não cadastrado</div>
+		<br>
+	<center>
+		<input type="button" id="alert" value="Alert" onclick="alert(&#39;Alert Simples&#39;);">
+		<input type="button" id="confirm" value="Confirm" onclick="if(confirm(&#39;Confirma ou rejeita o pop up?&#39;)) alert(&#39;Confirmado&#39;); else alert(&#39;Negado&#39;);">
+	</center>
+		<br>
+		<a href="file:///C:/Users/lucas/AppData/Local/Temp/%7BF8ED87E4-5F36-4247-A0A8-63D8024E1E9D%7D/QaAssessment.html#" onclick="javascript:voltou()">Voltar</a>
+	</center>
+	<iframe id="frame2" src="./QAAssessment_files/frame.html" style="border: 0px" height="20"></iframe>
+
+</body></html>
