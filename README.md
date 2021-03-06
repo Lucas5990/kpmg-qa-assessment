@@ -2,7 +2,7 @@
 
 QA Assesment Test for a QA role at KPMG
 
-## Requisitos Cumpridos
+## :heavy_check_mark: Requisitos Cumpridos
 
 1. Requerido:
 
@@ -10,9 +10,9 @@ QA Assesment Test for a QA role at KPMG
 - [x] Organização e execução do código;
 - [x] Asserts de validação.
 
-2. Desejável
+2. Desejável:
 
-- [ ] Data Driven Test com parametrização dos dados em Excel ou arquivos texto.
-- [x] Page Objects;
+- [ ] Data Driven Test com parametrização dos dados em Excel ou arquivos texto;
+- [x] Page Objects.
 
 Obs: O requisito desejável "Data Driven Test com parametrização dos dados em Excel ou arquivos texto." não foi cumprido, pois não tenho conhecimento do assunto no momento.
