@@ -2,10 +2,17 @@
 
 QA Assesment Test for a QA role at KPMG
 
-## Requisitos
+## Requisitos Cumpridos
 
-1. Requeridos
+1. Requerido:
 
 - [x] Ténicas de busca de elementos como xpath, id, name, etc;
-- [ ] Organização e execução do código;
-- [ ] Asserts de validação.
+- [x] Organização e execução do código;
+- [x] Asserts de validação.
+
+2. Desejável
+
+- [ ] Data Driven Test com parametrização dos dados em Excel ou arquivos texto.
+- [x] Page Objects;
+
+Obs: O requisito desejável "Data Driven Test com parametrização dos dados em Excel ou arquivos texto." não foi cumprido, pois não tenho conhecimento do assunto no momento.
