@@ -1,6 +1,6 @@
 # kpmg-qa-assessment
 
-QA Assesment Test for a QA role at KPMG
+Assesment Test for a QA role at KPMG
 
 ## :heavy_check_mark: Requisitos Cumpridos
 
